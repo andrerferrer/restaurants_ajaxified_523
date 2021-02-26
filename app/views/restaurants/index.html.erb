@@ -2,6 +2,10 @@
   <% @restaurants.each do |restaurant| %>
     <p>
       <%= link_to restaurant.name, restaurant_path(restaurant) %>
+      <%= link_to '❌', 
+                  restaurant_path(restaurant), 
+                  method: :delete,
+                  remote: true %>
     </p>
   <% end %>
 </div>

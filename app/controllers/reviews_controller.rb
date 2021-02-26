@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id]) # /restaurants/:restaurant_id/reviews
     @review.restaurant = @restaurant
     if @review.save
-      redirect_to restaurant_path(@restaurant)
+      redirect_to restaurant_path(@restaurant, anchor: "reviews")
     else
       render 'restaurants/show'
     end
