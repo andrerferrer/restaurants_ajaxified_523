@@ -1,4 +1,15 @@
 <div class="container">
+
+  <%# COUNTER %>
+  <div class="flex-center mt-4" data-controller='counter'>
+    <div class="counter">
+      <span data-counter-target='number'><%= @restaurant_count %></span>
+    </div>
+
+    <button class="btn btn-outline-secondary"
+            data-action='click->counter#refresh'>Refresh counter</button>
+  </div>
+
   <% @restaurants.each do |restaurant| %>
     <p>
       <%= link_to restaurant.name, restaurant_path(restaurant) %>
